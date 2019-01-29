@@ -10,6 +10,6 @@ export class AppComponent {
   title = 'adminpro';
 
   constructor ( public _ajustes: SettingsService) {
-    
+
   }
 }
