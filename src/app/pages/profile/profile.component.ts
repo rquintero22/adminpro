@@ -28,7 +28,7 @@ imagenTemp: string;
     this.usuario.nombre = usuario.nombre;
     if ( !usuario.google ) {
       this.usuario.email = usuario.email;
-    }    
+    }
 
     this._usuarioService.actualizarUsuario( this.usuario )
       .subscribe();
@@ -53,7 +53,7 @@ imagenTemp: string;
 
     let urlImagenTemp = reader.readAsDataURL( archivo );
 
-    reader.onloadend = () => this.imagenTemp = reader.result;
+    reader.onloadend = () => this.imagenTemp = reader.result.toString();
 
   }
 

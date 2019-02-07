@@ -5,6 +5,7 @@ import { SettingsService, SidebarService, SharedService, UsuarioService,
           SubirArchivoService } from './service.index';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginGuardGuard } from './guards/login-guard.guard';
+import { ModaluploadService } from '../components/modal-upload/modalupload.service';
 
 @NgModule({
   declarations: [],
@@ -18,7 +19,8 @@ import { LoginGuardGuard } from './guards/login-guard.guard';
     SharedService,
     UsuarioService,
     LoginGuardGuard,
-    SubirArchivoService
+    SubirArchivoService,
+    ModaluploadService
   ]
 })
 export class ServiceModule { }
