@@ -59,7 +59,7 @@ export class UsuarioService {
    * @param token Valida el usuario con Google
    */
   loginGoogle ( token: string ) {
-    let url = URL_SERVICIOS + '/login/google';
+    const url = URL_SERVICIOS + '/login/google';
 
     return this.http.post( url, { token} )
         .pipe(
@@ -71,7 +71,7 @@ export class UsuarioService {
         );
 
   }
-  
+
   /**
    * Valida el login
    */
@@ -83,7 +83,7 @@ export class UsuarioService {
       localStorage.removeItem('email');
     }
 
-    let url = URL_SERVICIOS + '/login';
+    const url = URL_SERVICIOS + '/login';
 
     return this.http.post( url, usuario)
       .pipe(
@@ -122,7 +122,7 @@ export class UsuarioService {
           let usuarioDB: Usuario = resp.usuario;
 
           this.guardarStorage( usuarioDB._id, this.token, usuarioDB );
-        }       
+        }
 
         swal('Usuario actualizado', usuario.nombre, 'success');
 
@@ -148,14 +148,16 @@ export class UsuarioService {
 
   cargarUsuarios( desde: number = 0 ) {
 
-    let url = URL_SERVICIOS + '/usuario?desde=' + desde;
+    let url = URL_SERVICIOS + '/usuario?desde=';
+    url += desde;
 
     return this.http.get( url );
 
   }
 
   buscarUsuario( termino: string ) {
-    let url = URL_SERVICIOS + '/busqueda/coleccion/usuarios/' + termino;
+    let url = URL_SERVICIOS + '/busqueda/coleccion/usuarios/';
+    url += termino;
 
     return this.http.get( url )
     .pipe(
