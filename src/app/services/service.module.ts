@@ -4,9 +4,11 @@ import { CommonModule } from '@angular/common';
 import { SettingsService, SidebarService, SharedService, UsuarioService,
           SubirArchivoService, MedicoService } from './service.index';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginGuardGuard } from './guards/login-guard.guard';
+
 import { ModaluploadService } from '../components/modal-upload/modalupload.service';
 import { HospitalService } from './hospital/hospital.service';
+import { LoginGuardGuard } from './guards/login-guard.guard';
+import { AdminGuard } from './guards/admin.guard';
 
 @NgModule({
   declarations: [],
@@ -23,7 +25,8 @@ import { HospitalService } from './hospital/hospital.service';
     SubirArchivoService,
     ModaluploadService,
     HospitalService,
-    MedicoService
+    MedicoService,
+    AdminGuard
   ]
 })
 export class ServiceModule { }
