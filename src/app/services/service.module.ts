@@ -7,8 +7,11 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { ModaluploadService } from '../components/modal-upload/modalupload.service';
 import { HospitalService } from './hospital/hospital.service';
+
+//
 import { LoginGuardGuard } from './guards/login-guard.guard';
 import { AdminGuard } from './guards/admin.guard';
+import { VerificaTokenGuard } from './guards/verifica-token.guard';
 
 @NgModule({
   declarations: [],
@@ -21,12 +24,13 @@ import { AdminGuard } from './guards/admin.guard';
     SidebarService,
     SharedService,
     UsuarioService,
-    LoginGuardGuard,
     SubirArchivoService,
     ModaluploadService,
     HospitalService,
     MedicoService,
-    AdminGuard
+    LoginGuardGuard,
+    AdminGuard,
+    VerificaTokenGuard
   ]
 })
 export class ServiceModule { }

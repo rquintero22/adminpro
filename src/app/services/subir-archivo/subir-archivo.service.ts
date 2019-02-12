@@ -30,15 +30,13 @@ export class SubirArchivoService {
         }
       };
 
-      let url = URL_SERVICIOS + '/upload/' + tipo +  '/' + id;
+      const url = URL_SERVICIOS + '/upload/' + tipo +  '/' + id;
 
       xhr.open( 'PUT', url, true);
       xhr.send( formData );
 
     } );
 
-    
-    
 
   }
 
